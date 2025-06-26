@@ -1,7 +1,28 @@
+.container {
+    position: relative;
+    height: 170px;
+}
+
+.logoclass img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 110px;
+    height: auto;
+}
+
+.toptext h1{
+    text-align: center;
+    line-height: 120px; /* vertically align text */
+    font-size: 40px;
+}
+
+/*END OF TITLE BLOCK*/
+
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.2;
-  background-color: #f4f4f9;
+  background-color: #ffff;
   color: #333;
   padding-left: 200px;
   padding-right: 200px;
@@ -22,4 +43,14 @@ p1 {
     text-align: center;
     font-size: large;
     line-height: 1.6;
+}
+
+.spacer {
+    height: 50px; /* Adjust height for vertical spacing */
+  }
+
+.articleimage {
+    height: 420px;
+    display: block;
+    margin: 0 auto;
 }

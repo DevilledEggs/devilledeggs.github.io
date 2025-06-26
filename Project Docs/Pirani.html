@@ -7,9 +7,51 @@
   <meta name="description" content="70s Edwards PR10s Gets a New Life" />
   <link rel="stylesheet" type="text/css" href="ProjectStyle.css" />
   <link rel="icon" href="transistor.png">
+  
+  <div class="container">
+      
+      <div class="logoclass">
+      <a href="../index.html"><img src= "../Logo.png" alt="Logo"></a>
+      </div>
+
+      <div class="toptext">
+        <h1>Martin Panev</h1>
+      </div>
+
+    </div>
+
 </head>
+
 <body>
   <h1>Edwards PR10S Restoration</h1>
+  <h2>Status: Complete (for now)</h2>
   <h2>6/26/2025</h2>
-  <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac tristique augue. Integer id tristique nibh. Duis dapibus arcu vel mi pulvinar, ac convallis diam mattis. Sed neque tellus, fringilla non ligula sit amet, vehicula rutrum orci. Proin nec efficitur lorem. Nulla molestie metus at mi elementum ultrices. Donec id purus eu nisi rhoncus condimentum sed in risus. Nam egestas, erat nec feugiat facilisis, elit lectus lobortis metus, eu lacinia diam urna nec tortor. Praesent eleifend ipsum ac gravida auctor. Vivamus quis diam luctus dui tristique euismod. Duis sodales scelerisque libero vitae venenatis. Morbi metus tellus, euismod at nisi vel, mattis mollis quam. Donec maximus nunc in sagittis molestie. Maecenas ultricies congue rutrum. Donec a ante nisi.</p1>
-</body>
+  <div class="spacer"></div>
+  <p1>A few months back, continuing some high vacuum experiments, I needed a way to quantitate just how much vacuum I was pulling. Looking online, I found various different gauges from different manufacturers, at various different price points. I settled on an Airserco model 9044 gauge with a 9022 transducer. Months of "using" it (trying to get a reading) later, and I finally gave up and bought a different gauge on Ebay. Little did I know, I would be opening yet another can of worms.</p1>
+  <p1>Only after I had bought it (seller gave me a considerable discount and I jumped, arguably too early), I started looking into documentation and schematics. Much to my amazement, I found (what I thought) was the correct schematic:</p1>
+  <div class="spacer"></div>
+  <a href="https://www.madison-tech.com/upload/downs/2019111814305581.pdf"><img src="piranischema.png" class="articleimage"></a>
+  <div class="spacer"></div>
+  <p1>Having had a confident look at the schematic and identifying it as a wheatstone bridge with two adjustments, one for compensation, and one for heater current(?), I connected what I thought was power and ground, gave it 12v, and promptly unplugged it after I heard a bang. Opening it up for further investigation, and I found a melted resistor. I replaced said resistor (it was the 47.5R), and actually thought before proceeding. Luckily I didnt melt the compensator coil...</p1>
+  <div class="spacer"></div>
+  <img src="PiraniThumb.png" alt="Bottom of PCB" class="articleimage">
+  <div class="spacer"></div>
+  <p1>Checking the board itself, I noticed some features such as the rounded traces that made me think it was older than I had originally made it out to be. After sending an email to Edwards, this suspicion was confirmed. In fact, Edwards support found it in the 1976 catalog of gauges.</p1>
+  <div class="spacer"></div>
+  <img src="gaugecatalog.png" alt="Vacuum Gauge Catalog of 1976" class="articleimage">
+  <div class="spacer"></div>
+  <p1>Regardless of its age, the transducer tube was in decent shape (intact filament), so I persisted. My next best bet was to reverse engineer the board, and so I did, tracing it in inkscape.</p1>
+  <div class="spacer"></div>
+  <img src="tracedschematic.jpg" alt="Hand traced schematic" class="articleimage">
+  <div class="spacer"></div>
+  <p1>Taking from this, I traced back every connection and created a schematic with the pin diagrams to the connector and the corresponding wire colors on paper. Looking at this configuration, I was able to take a reasonable guess as to where to apply power to: a.) not burn the filament out b.) not destroy resistors, and c.) power the entire bridge and not just one leg. Attaching a current regulated supply this time, with 5v for testing, only the transducer tube heats up, and as expected at atmospheric, I measured close to 0v across the other two legs of the bridge, which is correct (bridge is balanced at atmospheric). Success! Right..? Not yet.</p1>
+  <div class="spacer"></div>
+  <p1>When I was purchasing the tube, in my sheer excitement to finally find what I wanted for a reasonable price, I neglected to look at what the gauge's fitting was. When I recieved it, I noticed it resembled a KF16 vacuum fitting in diameter and angle, but the flange was significantly thicker to accomodate for threading, something I hadnt seen before on a fitting of this type. Talking to Edwards support, we were able to figure out that this was an SC-10 screwed couopling (also shown in the catalog from '76).</p1>
+  <div class="spacer"></div>
+  <img src="piranilistingthread.png" alt="Pirani gauge with threaded coupling" class="articleimage">
+  <div class="spacer"></div>
+  <p1>Unfortunately, this SC-10 fitting doesnt seem to exist on online marketplaces.</p1>
+  <div class="spacer"></div>
+  <p1>Now I need to make an adapter... the list of things to do grows ever longer.</p1>
+  <div class="spacer"></div>
+  </body>

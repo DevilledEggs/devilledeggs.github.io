@@ -1,7 +1,28 @@
+.container {
+    position: relative;
+    height: 170px;
+}
+
+.logoclass img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 110px;
+    height: auto;
+}
+
+.toptext h1{
+    text-align: center;
+    line-height: 120px; /* vertically align text */
+    font-size: 40px;
+}
+
+/*END OF TITLE BLOCK*/
+
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f9;
+  background-color: #fff;
   color: #333;
   padding: 20px;
 }
@@ -26,6 +47,10 @@ h1 {
 
 .imagecontainer a{
   text-decoration: none;
+}
+
+.imagecontainer img{
+  max-height: 300px;
 }
 
 .row {
