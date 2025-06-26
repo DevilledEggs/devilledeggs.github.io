@@ -77,14 +77,9 @@ h1 {
   max-height: 300px;
   box-shadow:
     0 0 3px #fe8618,
-    0 0 5px 
+    0 0 8px 
 #fe8618,
-    0 0 10px #fe8618,
-    0 0 21px #e95e01,
-    0 0 42px #cf4600,
-    0 0 48px #cf4600,
-    0 0 51px ,
-    0 0 75px #cf4600;
+    0 0 20px #fe8618
 }
 
 .row {
