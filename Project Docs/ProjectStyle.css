@@ -1,4 +1,6 @@
-.container {
+@font-face { font-family: customFont; src: url('../neonize.ttf'); } 
+
+ .container {
     position: relative;
     height: 170px;
 }
@@ -9,24 +11,46 @@
     left: 10px;
     width: 110px;
     height: auto;
+    filter: invert(1);
 }
 
 .toptext h1{
+    font-family: "customFont";
+    text-rendering: geometricPrecision;
+    font-weight: lighter;
     text-align: center;
     line-height: 120px; /* vertically align text */
-    font-size: 40px;
+    font-size: 60px;
+
+    color: #d7fd12;
+    text-shadow:
+    0 0 7px #fe8618,
+    0 0 10px 
+#fe8618,
+    0 0 21px #fe8618,
+    0 0 42px #e95e01,
+    0 0 82px #cf4600,
+    0 0 92px #cf4600,
+    0 0 102px ,
+    0 0 151px #cf4600;
 }
 
 /*END OF TITLE BLOCK*/
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Helvetica','Ariel',sans-serif;
   line-height: 1.2;
   background-color: #ffff;
-  color: #333;
+  color: #fff;
   padding-left: 200px;
   padding-right: 200px;
   padding-top: 20px;
+
+  background-color: black;
+}
+
+head {
+  background-color: black;
 }
 
 h1 {
