@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Martin Panev's Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="what will i waste my time with next?" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" href="transistor.png">
+</head>
+<body>
+  <h1>portfolio</h1>
+  <div id="image-row">
+    <a href="Docs.html"><img src="books.jpg" class="slot-img">
+    <a href="Programming.html"><img src="computer.png" class="slot-img">
+    <a href="Misc.html"><img src="filingcabinet.png" class="slot-img">
+    <a href="Machining.html"><img src="lathe.jpg" class="slot-img">
+    <a href="Electronics.html"><img src="oscilloscope.gif" class="slot-img">
+  </div>
+  <script>
+  const container = document.getElementById("image-row");
+  const images = Array.from(container.children);
+
+  console.log("Original order:", images.map(img => img.src));
+
+  for (let i = images.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [images[i], images[j]] = [images[j], images[i]];
+  }
+
+  console.log("Shuffled order:", images.map(img => img.src));
+
+  images.forEach(img => container.appendChild(img));
+  </script>
+</body>

@@ -1,0 +1,46 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.imagecontainer {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.imagecontainer p{
+    margin-top: 10px;
+    font-size: medium;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-weight: bold;
+}
+
+.imagecontainer a{
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 32%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}

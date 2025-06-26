@@ -1,0 +1,25 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.2;
+  background-color: #f4f4f9;
+  color: #333;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+}
+
+h2{
+    text-align: center;
+    font-size: larger;
+}
+
+p1 {
+    text-align: center;
+    font-size: large;
+    line-height: 1.6;
+}

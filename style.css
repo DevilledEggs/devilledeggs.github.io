@@ -1,0 +1,29 @@
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+  padding: 20px;
+
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+#image-row {
+    display: flex;
+    width: 100vw;
+    height: 250px;
+    overflow: hidden;
+    align-self: center;
+}
+
+.slot-img {
+    width: 19.5vw;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
