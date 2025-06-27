@@ -55,9 +55,10 @@ head{
 }
 
 #image-row {
+    margin-top: 8%;
     display: flex;
     width: 100vw;
-    height: 250px;
+    height: 150px;
     overflow: hidden;
     align-self: center;
 }
