@@ -98,3 +98,14 @@ a:visited{
         0 0 3px #fe8618, 0 0 8px #fe8618,
         0 0 20px #fe8618;
 }
+
+.articleimageswide {
+    height: auto;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+
+    box-shadow:
+        0 0 3px #fe8618, 0 0 8px #fe8618,
+        0 0 20px #fe8618;
+}
