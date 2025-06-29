@@ -75,6 +75,7 @@ h1 {
 
 .imagecontainer img{
   max-height: 300px;
+  max-width: 300px;
   box-shadow:
     0 0 3px #fe8618,
     0 0 8px 
