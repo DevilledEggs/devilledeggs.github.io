@@ -8,7 +8,7 @@
 .logoclass img{
     position: absolute;
     top: 10px;
-    width: 110px;
+    width: 7.5%;
     height: auto;
     filter: invert(1);
 }
@@ -19,7 +19,8 @@
     font-weight: lighter;
     text-align: center;
     line-height: 120px; /* vertically align text */
-    font-size: 60px;
+    font-size: 3vw;
+    /*font-size: 60px;*/
 
     color: #d7fd12;
     text-shadow:
