@@ -8,7 +8,6 @@
 .logoclass img{
     position: absolute;
     top: 10px;
-    left: 10px;
     width: 110px;
     height: auto;
     filter: invert(1);
@@ -42,8 +41,8 @@ body {
   line-height: 1.2;
   background-color: #ffff;
   color: #fff;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 120px;
+  padding-right: 120px;
   padding-top: 20px;
 
   background-color: black;
@@ -80,16 +79,36 @@ a:visited{
     height: 50px; /* Adjust height for vertical spacing */
   }
 
+
 .articleimage {
-    height: 420px;
+    max-height: auto;
+    width: 45%;
     display: block;
     margin: 0 auto;
-
-    /*
 
     box-shadow:
         0 0 3px #fe8618, 0 0 8px #fe8618,
         0 0 20px #fe8618;
-        
-    */
+}
+
+.articleimageshort {
+    max-height: auto;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+
+    box-shadow:
+        0 0 3px #fe8618, 0 0 8px #fe8618,
+        0 0 20px #fe8618;
+}
+
+.articleimageswide {
+    height: auto;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+
+    box-shadow:
+        0 0 3px #fe8618, 0 0 8px #fe8618,
+        0 0 20px #fe8618;
 }
