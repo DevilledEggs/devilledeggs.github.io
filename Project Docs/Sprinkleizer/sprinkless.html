@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sprinkleizer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="70s Edwards PR10s Gets a New Life" />
+  <link rel="stylesheet" type="text/css" href="ProjectStyle.css" />
+  <link rel="icon" href="transistor.png">
+  
+  <div class="container">
+      
+      <div class="logoclass">
+      <a href="../../index.html"><img src= "../../Logo.png" alt="Logo"></a>
+      </div>
+
+      <div class="toptext">
+        <h1>Martin Panev</h1>
+      </div>
+
+    </div>
+
+</head>
+
+<body>
+  <h1>Sprinkleizer</h1>
+  <h2>Status: Completed</h2>
+  <h2>7/31/2025</h2>
+  <div class="spacer"></div>
+  <p1>Today, I was bored at work. The shop guys were backed up with too many projects to count, and its the end of the month so we cant start any new designs anyways. This led me to reopen Python for the first time in probably close to 6 months, and make a more "polished" variation on the sprinkle program that I challenge myself to write in every language I learn. I present to you... SPRINKLEIZER!</p1>
+  <div class="spacer"></div>
+  <img src="mainmenu.png" alt="Main Menu" class="articleimage">
+  <div class="spacer"></div>
+  <p1>The text changes color and changes in size, shrinking and enlarging, though its the end of the day and frankly, I could not be bothered to make an agif for it. Anyhow, here are some details: </p1>
+  <div class="spacer"></div>
+  <p1>I used Python turtle for the sprinkling, using random to make random points with random colors at random positions with random angles. When this script starts, I take mouse position and store points into a list, which get joined to make a shape. Then, using the best library ever, <a href="https://pypi.org/project/shapely/">shapely</a>, I took those points and offset them slightly. Then, I checked whether or not the sprinkle that I am currently drawing is within this shape with some simple math:</p1>
+  <div class="spacer"></div>
+  <img src="simple math.png" alt="Simple Math" class="articleimage">
+  <div class="spacer"></div>
+  <p1>Shapely:</p1>
+  <div class="spacer"></div>
+  <img src="shapely.png" alt="Shapely Integration" class="articleimage">
+  <div class="spacer"></div>
+  <p1>I also made a Tkinter interface, in a separate script, which is the main menu, and I interfaced it with the main graphical script. It has all of the settings that I could bear to reference, such as the margin (shapely), number of sprinkles, and background color (tkinter combobox to get a appealing dropdown).</p1>
+  <div class="spacer"></div>
+  <p1>Tkinter code:</p1>
+  <div class="spacer"></div>
+  <img src="tkinter.png" alt="Tkinter" class="articleimage">
+  <div class="spacer"></div>
+  <img src="sprinkeshow.gif" alt="Video of Function" class="articleimage">
+  <div class="spacer"></div>
+  <p1>It turned out pretty cool, nothing to be proud of, but it was succesful in killing a few hours of my time.</p1>
+  <div class="spacer"></div>
+  <img src="sprinkeheart.png" alt="Heart made of sprinkles" class="articleimage">
+  <div class="spacer"></div>
+  <a href="https://github.com/DevilledEggs/sprinkleizer"><p1>Check it out on Github!</p1></a>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+
+</body>
