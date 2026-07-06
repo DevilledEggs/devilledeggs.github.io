@@ -58,13 +58,13 @@ head{
     margin-top: 8%;
     display: flex;
     width: 100vw;
-    height: 150px;
+    height: 350px;
     overflow: hidden;
     align-self: center;
 }
 
 .slot-img {
-    width: 19.5vw;
+    width: 33vw;
     height: 100%;
     object-fit: cover;
     display: block;
