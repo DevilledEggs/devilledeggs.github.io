@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SEM Beam Supply</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="How hard can high voltage be?" />
+  <link rel="stylesheet" type="text/css" href="ProjectStyle.css" />
+  <link rel="icon" href="transistor.png">
+    <div class="container">
+      
+      <div class="logoclass">
+      <a href="../../index.html"><img src= "../../Logo.png" alt="Logo"></a>
+      </div>
+
+      <div class="toptext">
+        <h1>Martin Panev</h1>
+      </div>
+
+    </div>
+</head>
+
+<body>
+  <h1>SEM Beam Supply</h1>
+  <h2>Status: Complete (for now)</h2>
+  <h2>10/13/2026</h2>
+
+  <div class="spacer"></div>
+  <p1>Continuing my SEM project, I needed a high-voltage (0-10kV) supply that can be biased such that 0v is 10kV (giving -10kV to 0v output).</p1>
+  <div class="spacer"></div>
+
+  <p1>I figure I should probably explain how an electron gun works in an electron microscope. Much of what I have learned about electron microscopy has come from <a href="https://www.youtube.com/@AppliedScience">Ben Krasnow over at Applied Science</a> (a huge role-model of mine), so for a much more in-depth explanation, please check out his series of episodes on his homebuild SEM. In essence, an electron gun of this type has three parts: filament, wehnelt, and anode. The filament is first in order and it is essentially our electron source. Through thermionic emission, electrons are boiled off of this filament -- the voltage that we apply to the filament doesn't actually have as much to do with the SEM as you would think, it is just the easiest way to heat the filament up. Next up, we have the wehnelt cylinder/cup. In essence, this is a "cup" shaped metal piece with a very fine aperture at the end. The filament is positioned inside of this cup such that the tip of the tungsten just pokes through the top edge. By applying a negative electrical charge relative to the electron emitter (around 300v is recommended), a repulsive electrostatic field is created that forces diverging electrons into a tight, focused beam. Adjusting this "bias", we can change the beam current and in turn, the spot size. Making it too negative blocks the beam entirely, while making it less negative lets more electrons through. Lastly is the anode, acting as a highly positive electrode that attracts, accelerates, and columnates the electron beam. When you give it a high voltage (in this case 10kV max relative to the emitter), the immense voltage difference creates a powerful electrostatic field. Because electrons are negatively charged, they are violently repelled by the cathode/wehnelt setup and forcefully pulled toward the positive anode. This gives the electrons their kinetic energy and allows us to, in essence, smash them into a sample and measure how many come back to us.</p1>
+  <div class="spacer"></div>
+  <p1>So let's get building!</p1>
+  <div class="spacer"></div>
+
+  <p1>Here is a (very loose) schematic of what I need to make:</p1>
+  <div class="spacer"></div>
+  <img src="Electron Microscope.png" alt="Rough Schematic" class="articleimage">
+  <div class="spacer"></div>
+
+  <p1>The general layout is as such: A variac's output (non-isolated 0-120vAC) goes into a 120v to 6v transformer with a high voltage isolation rating. This makes a 0-6v AC supply that is "floating", meaning we can bias it to whatever we want. Afterwards, this goes into a full wave bridge rectifier. Interestingly, despite this entire thing being biased to -10kV, the diodes are never seeing more than the 0-6v, thus we can get away with using standard 1N4149 diodes. (NOTE: HIGH VOLTAGE IS DANGEROUS! Many of these components are potted in special epoxy and STILL require care to not be deadly!!). At our DC(ish) filament heater output, we use two resistors between both leads of the filament to create a voltage divider, which gives us roughly half of the filament voltage at the midpoint. This will be our voltage reference. This midpoint goes to an 80MΩ resistor which connects (through a current meter) to our negatively biased high-voltage supply. This 80MΩ resistor allows only a tiny current to pass. It's voltage drop at this tiny current is what makes the wehnelt bias of ~300v relative to the cathode, while also giving us our emission current (displayed on our 100uA meter). Using ohm's law, we can measure that tiny current through the resistor (emission current), and given the adjustable HV supply (accelerating voltage), we can infer the voltage drop of the resistor, giving us the bias voltage of the wehnelt cup. Next, we can see the anode, which sits around ground potential (which is very high compared to the -HV), accelerating our electrons nicely. This is often referred to as a "self-biasing" wehnelt circuit, as it determines its bias based on beam voltage and beam current. This contrasts with a more conventional design where you would have a separate floating bias supply to establish that ~300v difference. Some notes in no particular order:</p1>
+  <div class="spacer"></div>
+
+  <ul>
+    <li>The 80Mohm resistor should realistically be replaced with a rheostat or potentiometer, allowing you to adjust the wehnelt bias. Unfortunately, it is almost impossible to find a potentiometer that can handle 10kV, is adjustable from, say, 0-100MΩ, and can handle the maximum watt or two going through it. Reading Ben Krasnow's blog, I fonud that he used some kind of potentiometer from a CRT flyback circuit which is specially designed for this application -- CRTs are effectively electron guns! Unfortunately, I was unable to find a similar pot, so I used a resistor in its place that gives me the desired wehnelt voltage of 300v at ~3.75uA, which is a reasonable emission current.</li>
+    <div class="spacer"></div>
+    <li>High voltage is dangerous! Even though I have technically done everything correctly, I wouldn't so much as touch the chassis while it is on. A small ground fault could cause floating high voltage to go to the metal case and seriously hurt you. After all, we are essentially connecting our floating HV+ directly to the metal chassis, which is in turn grounded. Stay safe!!</li>
+    <div class="spacer"></div>
+    <li>High isolation voltage stepdown transformers are essentially impossible to find. Unless you gut a CRT, there really arent a lot of options. I used a Zettler Magnetics BV301S06028 from DigiKey, which I thought offered a 4200Vrms isolation (this can often be pushed -- this is a fully potted transformer after all), but unfortunately, DigiKey mislabeled it, and this is actually a 1 second test from primary to secondary, so really not great. For now, I don't hear any arcing and the transformer seems to be doing fine, so I will do only my preliminary tests of the beam with this transformer and I will change it out as soon as I can find a more suitable one.</li>
+    <div class="spacer"></div>
+    <li>My HV feedthroughs which can hold a vacuum are actually simple A7TC resistorless spark plugs, and thus I can use spark plug high-tension lead wire and standard spark plug boots for my wiring. Unfortunately, I ran out of this wire and so I purchased some from high voltage wire from McMaster (#9620T13). This stuff was very nice to work with -- perhaps I will change the rest to this type of wire when budget allows.</li>
+  </ul>
+
+  <div class="spacer"></div>
+  </body>
