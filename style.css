@@ -68,4 +68,21 @@ head{
     height: 100%;
     object-fit: cover;
     display: block;
+
+    /* fade edges into transparent */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
 }
